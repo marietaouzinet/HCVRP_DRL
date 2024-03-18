@@ -232,7 +232,7 @@ class AttentionModel(nn.Module):
         if obj == 'min-max':
             SPEED = [1, 1, 1, 1, 1]
         if obj == 'min-sum':
-            SPEED = [1/4, 1/5, 1/6, 1/7, 1/8]
+            SPEED = [1/4, 1/5, 1/6, 1/8, 1/9]
 
         batch_size, _, embed_dim = embeddings.size()
         _, num_veh = current_node.size()

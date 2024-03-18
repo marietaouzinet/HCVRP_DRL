@@ -13,7 +13,7 @@ def generate_hcvrp_data(dataset_size, hcvrp_size, veh_num):
         loc = rnd.uniform(0, 1, size=(dataset_size, hcvrp_size + 1, 2))
         depot = loc[:, -1]
         cust = loc[:, :-1]
-        d = rnd.randint(1, 10, [dataset_size, hcvrp_size+1])
+        d = rnd.randint(1, 21, [dataset_size, hcvrp_size+1])
         d = d[:, :-1]  # the demand of depot is 0, which do not need to generate here
 
         if veh_num == 3:
@@ -26,7 +26,7 @@ def generate_hcvrp_data(dataset_size, hcvrp_size, veh_num):
             data.append(thedata)
 
         elif veh_num == 5:
-            cap = [20., 25., 30., 35., 40.]
+            cap = [20., 25., 30., 40., 45.]
             thedata = list(zip(depot.tolist(),  # Depot location
                                cust.tolist(),
                                d.tolist(),
@@ -45,7 +45,7 @@ if __name__ == "__main__":
     parser.add_argument("--veh_num", type=int, default=5, help="number of the vehicles; 3 or 5")
     parser.add_argument('--graph_size', type=int, default=80,
                         help="Sizes of problem instances: {40, 60, 80, 100, 120} for 3 vehicles, "
-                             "{80, 100, 120, 140, 160} for 5 vehicles")
+                             "{40, 80, 100, 120, 140, 160} for 5 vehicles")
 
     opts = parser.parse_args()
     data_dir = 'data'

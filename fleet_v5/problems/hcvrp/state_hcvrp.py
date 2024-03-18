@@ -24,7 +24,7 @@ class StateHCVRP(NamedTuple):
     cur_coord: torch.Tensor
     i: torch.Tensor  # Keeps track of step
 
-    VEHICLE_CAPACITY = [20., 25., 30., 35., 40.]  # Hardcoded
+    VEHICLE_CAPACITY = [20., 25., 30., 40., 45.]  # Hardcoded
 
     @property
     def visited(self):

@@ -11,7 +11,7 @@ import copy
 class HCVRP(object):
     NAME = 'hcvrp'  # Capacitated Vehicle Routing Problem
 
-    VEHICLE_CAPACITY = [20., 25., 30., 35., 40.]
+    VEHICLE_CAPACITY = [20., 25., 30., 40., 45.]
 
     @staticmethod
     def get_costs(dataset, obj, pi, veh_list, tour_1, tour_2, tour_3, tour_4,
@@ -19,7 +19,7 @@ class HCVRP(object):
         if obj == 'min-max':
             SPEED = [1, 1, 1, 1, 1]
         if obj == 'min-sum':
-            SPEED = [1 / 4, 1 / 5, 1 / 6, 1 / 7, 1 / 8]
+            SPEED = [1 / 4, 1 / 5, 1 / 6, 1 / 8, 1 / 9]
 
         batch_size, graph_size = dataset['demand'].size()
         num_veh = len(HCVRP.VEHICLE_CAPACITY)
@@ -154,11 +154,12 @@ class HCVRPDataset(Dataset):
 
             # From VRP with RL paper https://arxiv.org/abs/1802.04240
             CAPACITIES = {
-                80: [20., 25., 30., 35., 40.],
-                100: [20., 25., 30., 35., 40.],
-                120: [20., 25., 30., 35., 40.],
-                140: [20., 25., 30., 35., 40.],
-                160: [20., 25., 30., 35., 40.]
+                40: [20., 25., 30., 40., 45.],
+                80: [20., 25., 30., 40., 45.],
+                100: [20., 25., 30., 40., 45.],
+                120: [20., 25., 30., 40., 45.],
+                140: [20., 25., 30., 40., 45.],
+                160: [20., 25., 30., 40., 45.]
             }
             # capa = torch.zeros((size, CAPACITIES[size]))
 
@@ -166,7 +167,7 @@ class HCVRPDataset(Dataset):
                 {
                     'loc': torch.FloatTensor(size, 2).uniform_(0, 1),
                     # Uniform 1 - 9, scaled by capacities
-                    'demand': (torch.FloatTensor(size).uniform_(0, 9).int() + 1).float(),
+                    'demand': (torch.FloatTensor(size).uniform_(0, 20).int() + 1).float(),
                     'depot': torch.FloatTensor(2).uniform_(0, 1),
                     'capacity': torch.Tensor(CAPACITIES[size])
                 }

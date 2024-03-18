@@ -140,6 +140,18 @@ def train_epoch(model, optimizer, baseline, lr_scheduler, epoch, val_dataset, pr
             os.path.join(opts.save_dir, 'epoch-{}.pt'.format(epoch))
         )
 
+        # Save in Google Drive
+        torch.save(
+            {
+                'model': get_inner_model(model).state_dict(),
+                'optimizer': optimizer.state_dict(),
+                'rng_state': torch.get_rng_state(),
+                'cuda_rng_state': torch.cuda.get_rng_state_all(),
+                'baseline': baseline.state_dict()
+            },
+            os.path.join('/content/gdrive/MyDrive/saved_models', 'epoch-{}.pt'.format(epoch))
+        )
+
     avg_reward = validate(model, val_dataset, opts)
 
     if not opts.no_tensorboard:
