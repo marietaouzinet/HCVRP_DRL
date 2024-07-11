@@ -1,0 +1,19 @@
+Véhicule 1 :
+Client 1 : [48.5039375, 7.6929845] 	Demande : 3
+Client 2 : [48.5571712, 7.7377408] 	Demande : 8
+Client 3 : [48.5735727, 7.7494076] 	Demande : 8
+Client 4 : [48.5919883, 7.7807406] 	Retour au dépôt
+Client 5 : [48.5710644, 7.7573171] 	Demande : 4
+Client 6 : [48.5773944, 7.7521186] 	Demande : 2.0
+Client 7 : [48.5769949, 7.7668494] 	Demande : 12
+Client 8 : [48.5919883, 7.7807406] 	Retour au dépôt
+Client 9 : [48.603888, 7.7880134] 	Demande : 10
+
+Véhicule 2 :
+
+Véhicule 3 :
+
+Véhicule 4 :
+
+Véhicule 5 :
+

@@ -1,0 +1,7 @@
+opencage
+urllib3<2.0
+customtkinter 
+folium
+CTkListbox
+matplotlib
+pillow
