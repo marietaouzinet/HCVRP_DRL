@@ -1,23 +1,20 @@
 # Deep Reinforcement Learning for Solving the Heterogeneous Capacitated Vehicle Routing Problem
 
-Attention based model for learning to solve the Heterogeneous Capacitated Vehicle Routing Problem (HCVRP) with both min-max and min-sum objective. Training with REINFORCE with greedy rollout baseline.
+## Introduction
 
-## Paper
-For more details, please see our paper： Jingwen Li, Yining Ma, Ruize Gao, Zhiguang Cao, Andrew Lim, Wen Song, Jie Zhang. [Deep Reinforcement Learning for Solving the Heterogeneous Capacitated Vehicle Routing Problem](https://ieeexplore.ieee.org/document/9547060). IEEE Transactions on Cybernetics, 2021. If this code is useful for your work, please cite our paper,
+As part of my engineering studies at Telecom Physique Strasbourg, I took part in an engineering project. The project was proposed by the city of Strasbourg, which wanted to make it easier for its employees to get around when distributing materials or equipment.
 
-```
-@article{li2021hcvrp,
-  title={Deep Reinforcement Learning for Solving the Heterogeneous Capacitated Vehicle Routing Problem},
-  author={Li, Jingwen and Ma, Yining and Gao, Ruize and Cao, Zhiguang and Andrew, Lim and Song, Wen and Zhang, Jie},
-  journal={IEEE Transactions on Cybernetics},
-  volume={52},
-  number={12},
-  pages={13572--13585},
-  year={2022},
-  publisher={IEEE}，
-  doi={10.1109/TCYB.2021.3111082}
-}
-``` 
+The aim of this project was to create an IT tool that could be run from a PC. The application allows employees to enter all the data relating to their deliveries via an input interface. This includes information such as delivery locations, type and number of materials to be delivered. The tool calculates the optimum route in terms of time and profitability, and informs the selection of the vehicle or vehicles to be used for the deliveries scheduled for the day. 
+
+## Technical choices
+
+
+
+
+
+Attention based model for learning to solve the Heterogeneous Capacitated Vehicle Routing Problem (HCVRP). Training with REINFORCE with greedy rollout baseline.
+
+
 
 ## Dependencies
 
@@ -28,7 +25,3 @@ For more details, please see our paper： Jingwen Li, Yining Ma, Ruize Gao, Zhig
 * tqdm
 * [tensorboard_logger](https://github.com/TeamHG-Memex/tensorboard_logger)
 * Matplotlib (optional, only for plotting)
-
-## Details
-For more details, please see the fleet_v3 and fleet_v5 for HCVRP with three vehicles and five vehicles, respectively.
-
