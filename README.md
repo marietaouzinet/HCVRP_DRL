@@ -18,7 +18,7 @@ The programmation language choice was imposed by our client : we have coded our 
 
 To solve this problem, we therefore chose a Deep Reinforcement Learning method based on the attention mechanism with a vehicle selection decoder taking into account the heterogeneous fleet constraint and a node selection decoder taking into account route construction, which learns to build a solution by automatically selecting a vehicle and a node for that vehicle at each stage.
 
-![Policy network of the DRL algorithm](Policy network)
+![Policy network of the DRL algorithm](policy_network.png)
 
 As shown in the figure above, to resolve the instance, the raw features are processed by the encoder for better representation. Our policy network first selects a vehicle (vi) from the entire fleet via the vehicle selection decoder, and then selects a node (xj) for that vehicle to visit via the node selection decoder at each route construction step. The vehicle and node selected form the action for that step, which is then used to update the states. This process is repeated until all customers have been served.
 
@@ -28,7 +28,7 @@ B. The decoder sequentially produces a customer at each stage to link each custo
 
 The algorithm is trained using REINFORCE with a greedy rollout baseline.
 
-![Functional architecture of the app](Functional architecture)
+![Functional architecture of the app](functional_architecture.jpg)
 
 
 
