@@ -26,10 +26,13 @@ B. The decoder sequentially produces a customer at each stage to link each custo
 
 The algorithm is trained using REINFORCE with a greedy rollout baseline.
 
+## Operation of the application
+
+The logic of the application and the interweaving of the two main parts, in this case the optimisation and user input interface parts, are described in the functional architecture diagram of our application below:
+
 ![Functional architecture of the app](functional_architecture.png)
 
-
-
+Our trip optimisation algorithm requires as input an instance of each customer's requests and the coordinates of the corresponding delivery points, supplied via the input interface. The characteristics of the delivery vehicles are also input data. The central part corresponds to the architecture of our code, which is used to retrieve the optimal delivery route.
 
 ## Dependencies
 
